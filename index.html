@@ -1651,53 +1651,222 @@
             </div>
 
             <!-- Bulk Inquiry Form -->
-            <div class="inquiry-form">
-                <h3 style="margin-bottom: 25px; font-size: 1.5rem; color: var(--clay-brown);">Bulk & Export Inquiry Form
-                </h3>
-                <form id="inquiryForm">
+            <!-- Bulk Inquiry Form -->
+<div class="inquiry-form">
 
-    <div class="form-grid">
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" required placeholder="John Doe">
-        </div>
+    <h3 style="margin-bottom: 25px; font-size: 1.5rem; color: var(--clay-brown);">
+        Bulk & Export Inquiry Form
+    </h3>
 
-        <div class="form-group">
-            <label for="email">Business Email</label>
-            <input type="email" id="email" required placeholder="john@company.com">
-        </div>
-    </div>
+    <form
+        action="YOUR_SCRIPT_URL"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="setTimeout(() => { this.reset(); }, 1000); alert('Inquiry submitted successfully!');">
 
-    <div class="form-grid">
-        <div class="form-group">
-            <label for="product">Target Product Segment</label>
-            <input type="text" id="product">
-        </div>
+        <div class="form-grid">
 
-        <div class="form-group">
-            <label for="destination">Export Destination</label>
+            <div class="form-group">
+                <label for="name">Full Name</label>
 
-            <select id="destination">
-                <option value="domestic">Domestic (Within India)</option>
-                <option value="canada">Canada</option>
-                <option value="australia">Australia</option>
-                <option value="fiji">Fiji</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-group full-width">
-        <label for="message">Consignment Requirements & Volume Details</label>
-
-        <textarea id="message" rows="5" required></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary">
-        Submit Formal Inquiry
-    </button>
-
-</form>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    placeholder="John Doe">
             </div>
+
+            <div class="form-group">
+                <label for="email">Business Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="john@company.com">
+            </div>
+
+        </div>
+
+        <div class="form-grid">
+
+            <!-- CUSTOM PRODUCT DROPDOWN -->
+
+            <div class="form-group">
+
+                <label for="product">
+                    Target Product Segment
+                </label>
+
+                <div class="custom-dropdown" data-name="product">
+
+                    <button
+                        type="button"
+                        class="custom-dropdown__button"
+                        aria-haspopup="listbox"
+                        aria-expanded="false">
+
+                        <span class="custom-dropdown__selected">
+                            Select product
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"
+                            aria-hidden="true"
+                            style="margin-left:8px;">
+                        </i>
+
+                    </button>
+
+                    <ul class="custom-dropdown__list"
+                        role="listbox"
+                        tabindex="-1">
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="100ml-handi">
+                            100ml Handi
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="10ml-bowl">
+                            10ml Bowl
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="80-500ml-glass">
+                            80–500ml Glass
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="boat-shape-snack-bowl">
+                            Boat Shape Snack Bowl
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="diya">
+                            Diya
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="handi">
+                            Handi
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="pineapple-snack-bowl">
+                            Pineapple Snack Bowl
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="plate-bowl-set">
+                            Plate + Bowl Set
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="plate-set">
+                            Plate Set
+                        </li>
+
+                        <li class="custom-dropdown__option"
+                            role="option"
+                            data-value="serving-bowl">
+                            Serving Bowl
+                        </li>
+
+                    </ul>
+
+                    <input
+                        type="hidden"
+                        name="product"
+                        id="product">
+
+                </div>
+
+            </div>
+
+            <!-- DESTINATION -->
+
+            <div class="form-group">
+
+                <label for="destination">
+                    Export Destination
+                </label>
+
+                <select
+                    name="destination"
+                    id="destination">
+
+                    <option value="domestic">
+                        Domestic (Within India)
+                    </option>
+
+                    <option value="canada">
+                        Canada
+                    </option>
+
+                    <option value="australia">
+                        Australia
+                    </option>
+
+                    <option value="fiji">
+                        Fiji
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="form-group full-width">
+
+            <label for="message">
+                Consignment Requirements & Volume Details
+            </label>
+
+            <textarea
+                name="message"
+                id="message"
+                rows="5"
+                required
+                placeholder="Please state estimated minimum order quantity or custom requirements...">
+            </textarea>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+            style="width:100%; border:none;">
+
+            Submit Formal Inquiry
+
+        </button>
+
+    </form>
+
+    <!-- HIDDEN IFRAME -->
+
+    <iframe
+        name="hidden_iframe"
+        style="display:none;">
+    </iframe>
+
+</div>
         </div>
     </section>
 
