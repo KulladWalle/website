@@ -1839,8 +1839,7 @@
             });
         });
     </script>
-
-    <script>
+<script>
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbyy5mkxbA-ANQ31TsqnBnHQFHRPmij1rw4R1lUhiqfhCR30DMnaFsHdKBCJPRZoASo/exec";
 
@@ -1860,25 +1859,25 @@ document
 
     try {
 
-      const response = await fetch(scriptURL, {
+      await fetch(scriptURL, {
         method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(data)
       });
 
-      const result = await response.json();
+      alert("Inquiry submitted successfully!");
 
-      if(result.result === "success") {
-
-        alert("Inquiry submitted successfully!");
-
-        document.getElementById("inquiryForm").reset();
-      }
+      document.getElementById("inquiryForm").reset();
 
     } catch(error) {
 
+      console.error(error);
+
       alert("Something went wrong!");
 
-      console.error(error);
     }
 
 });
